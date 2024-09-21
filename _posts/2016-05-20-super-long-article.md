@@ -3,7 +3,7 @@ layout: post
 title: "Server"
 categories: misc
 ---
-
+<pre>
 import http.server
 
 import socketserver
@@ -17,3 +17,4 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("serving at port", PORT)
     
     httpd.serve_forever()
+</pre>

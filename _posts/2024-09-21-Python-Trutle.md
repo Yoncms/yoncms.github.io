@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pytho的trutle库
+title: Python的trutle库
 ---
 <pre>
 turtle绘图的基础知识：

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Python的Byte和string互转
 ---
 <pre>

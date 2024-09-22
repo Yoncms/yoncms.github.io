@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Javascript的自定义事件
+title: Javascript的创建、初始化、销毁事件
 ---
 <pre>
 1、createEvent()

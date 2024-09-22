@@ -5,6 +5,7 @@ title: Echarts图表的使用
 <pre>
 > 引入 ECharts
 通过标签方式直接引入构建好的 echarts 文件
+<code>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@ title: Echarts图表的使用
     <script src="echarts.min.js"></script>
 </head>
 </html>
-
+</code>
 > 绘制一个简单的图表
 在绘图前我们需要为 ECharts 准备一个具备高宽的 DOM 容器。
 <body>
@@ -22,6 +23,7 @@ title: Echarts图表的使用
 </body>
 
 > 然后就可以通过 echarts.init 方法初始化一个 echarts 实例并通过 setOption 方法生成一个简单的柱状图，下面是完整代码。
+<code>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,6 +64,7 @@ title: Echarts图表的使用
     </script>
 </body>
 </html>
+</code>
 这样你的第一个图表就诞生了！
 
 > 颜色主题（Theme）

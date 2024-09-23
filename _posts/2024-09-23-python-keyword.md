@@ -3,7 +3,7 @@ layout: base
 title: Python的35个关键字说明
 ---
 <pre>
-**Python 中共有 35 个关键字**
+<h2>Python 中共有 35 个关键字</h2>
 
 import keyword
 # 获取关键字列表

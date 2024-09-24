@@ -3,9 +3,9 @@ layout: post
 title: "函数能改变函数外的列表或字典等类型的数据"
 ---
 
-# 在函数里能改变函数外的字典和列表的数据
-# 但是不能改变普通变量的值
+**在函数里能改变函数外的字典和列表的数据，但是不能改变普通变量的值**
 
+<pre>
 arr = []
 s = 10
 def st(a):
@@ -33,7 +33,7 @@ ss(1, 23232)
 print(arr)
 
 print(s)
-
+</pre>
 {% comment %}
 Might you have an include in your theme? Why not try it here!
 {% include my-themes-great-include.html %}

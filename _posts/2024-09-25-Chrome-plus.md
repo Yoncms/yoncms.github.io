@@ -61,7 +61,7 @@ title: Chrome浏览器扩展
     ]
 }
 </pre>
-**inject.js**
+**inject.js**  
 <pre>
 /**
  * 这是清单里的content-scripts的js，是content的js，也就是当前所访问的页面的js
@@ -92,7 +92,7 @@ window.addEventListener("message", (e) => {
     console.log(e.data);
 }, false);
 </pre>
-**popup.html**
+**popup.html**  
 <pre>
 &lt;meta charset="utf-8" &gt;
 &lt;div style="width:200px">
@@ -234,11 +234,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 //     });
 // })();
 </pre>
-**e1**  
+**e1.js**  
 <pre>
 console.log('xxxxxxxxx');
 </pre>
-**e2**  
+**e2.js**  
 <pre>
 conosle.log('xxxxxxxxxx');
 </pre>

@@ -1,0 +1,12 @@
+- name: 首页
+  link: /#
+- name: 关于我
+  link: /#about
+- name: 技能
+  link: /#skills
+- name: 项目
+  link: /#projects
+- name: 文章
+  link: /#articles
+- name: 联系我
+  link: /#contact

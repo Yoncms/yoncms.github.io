@@ -10,8 +10,8 @@ permalink: /tags/
   <div class="tag-cloud">
     {% assign tags_list = site.tags | sort %}
     {% for tag in tags_list %}
-      <div class="tag-section">
-        <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+      <div class="tag-section" id="{{ tag[0] | slugify }}">
+        <h2>{{ tag[0] }}</h2>
         <ul>
           {% assign posts = tag[1] | sort: 'date' | reverse %}
           {% for post in posts %}

@@ -1,0 +1,34 @@
+<header>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="{{ '/assets/images/avatar.png' | relative_url }}" alt="个人头像">
+            </div>
+            <div class="profile-content">
+                <h1>{{ site.author.name }}</h1>
+                <p class="tagline">{{ site.author.tagline }}</p>
+                <div class="social-links">
+                    {% if site.social_links.github %}
+                    <a href="{{ site.social_links.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    {% endif %}
+                    {% if site.social_links.linkedin %}
+                    <a href="{{ site.social_links.linkedin }}" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    {% endif %}
+                    {% if site.social_links.twitter %}
+                    <a href="{{ site.social_links.twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if site.social_links.email %}
+                    <a href="mailto:{{ site.social_links.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                {% for item in site.data.navigation %}
+                <li><a href="{{ item.link }}" {% if page.url == item.link %}class="active"{% endif %}>{{ item.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

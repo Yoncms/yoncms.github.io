@@ -1,20 +1,18 @@
 /* 文章中的标签样式 */
-.post-tags {
-  margin: 20px 0;
-  padding: 15px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
-.post-tags i {
-  color: #666;
-  margin-right: 10px;
-}
-
-.post-tags .tag-link {
+.post-meta .post-tags {
   display: inline-block;
-  margin: 5px;
-  padding: 5px 10px;
+  margin-left: 15px;
+}
+
+.post-meta .post-tags i {
+  color: #666;
+  margin-right: 5px;
+}
+
+.post-meta .tag-link {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 2px 8px;
   background: #f0f0f0;
   border-radius: 3px;
   color: #333;
@@ -23,7 +21,7 @@
   transition: all 0.3s ease;
 }
 
-.post-tags .tag-link:hover {
+.post-meta .tag-link:hover {
   background: #e0e0e0;
   color: #007bff;
 }

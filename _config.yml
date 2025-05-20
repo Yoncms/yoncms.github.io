@@ -1,0 +1,73 @@
+# 网站基本配置
+title: 我的GitHub个人主页
+description: 这里是我分享技术、思考和创意的地方
+baseurl: "" # 如果您的网站托管在子目录中，请在此处设置
+url: "https://yoncms.github.io" # 您的网站URL，例如 https://username.github.io
+
+# 作者信息
+author:
+  name: Yoncms | Zhangrongquan
+  tagline: Coder/一切可能都不一定可能
+  bio: 一名热爱编程的开发者，对技术充满好奇与探索精神。能够灵活运用它们解决实际问题，从前端页面到后端逻辑、从脚本工具到桌面应用，我都乐在其中。
+
+# 社交链接
+social_links:
+  github: https://github.com/yoncms
+  github_username: Yoncms | Zhangrongquan
+  linkedin: https://linkedin.com/in/yourprofile
+  linkedin_username: Yoncms | Zhangrongquan
+  twitter: https://twitter.com/yoncms
+  twitter_username: yoncms
+  email: banjbl@gmail.com
+
+# 英雄区域设置
+hero:
+  title: 欢迎来到我的个人空间
+  description: 这里是我分享技术、思考和创意的地方
+  button_text: 阅读我的文章
+  button_link: "#articles"
+
+# 关于我设置
+about:
+  - 从接触编程起就被代码的逻辑美深深吸引，并逐步掌握了多种编程语言，如 Python、C#、JavaScript、Java、C++ 等。在不同语言和技术栈之间切换已经成为我的日常，我喜欢从底层原理理解每种语言的特性与优势，灵活地应用于不同场景中。
+  - 注重 代码结构的可维护性、模块的复用性 以及 开发效率与执行性能的平衡。我相信“会写代码”和“写好代码”之间的差距，就在于是否能站在系统的角度去思考和设计。
+  - Hello! My name is Yoncms, and I’m a passionate programmer with a deep love for technology and an eagerness to master diverse programming languages. 
+  - Over the years, I’ve developed proficiency in a wide range of technologies and languages, including Python, C#, JavaScript, Java, and C++. Switching between stacks and adapting to new environments has become second nature to me.
+  - I take pride in writing clean, modular, and scalable code, always striving for a balance between maintainability and performance. To me, good programming is not just about making things work—it’s about crafting robust, understandable systems that can evolve over time.
+  - Beyond coding, I enjoy learning from open-source projects, reading source code, and sharing knowledge through blogs, GitHub repos, and community discussions. I believe that sharing knowledge is one of the best ways to grow, and I enjoy contributing back whenever possible.
+  - I also explore advanced topics such as AI APIs (e.g., OpenAI), DevOps pipelines, WebAssembly, and even compiler theory on the side. For me, programming is more than a job or a skill—it’s a way of turning imagination into reality, and a lifelong pursuit of creative problem-solving.
+  - Looking forward, I aim to continue expanding my horizons, tackling challenging problems, and collaborating on impactful projects. I’m excited to keep learning, building, and growing as a developer.
+# 联系方式设置
+contact:
+  description: 如果您有任何问题、合作意向或者只是想打个招呼，欢迎通过以下方式联系我：
+
+# 评论系统设置 (Giscus - 基于GitHub Discussions)
+comments:
+  provider: giscus
+  giscus:
+    repo: Yoncms/banjbl
+    repo_id: R_kgDOOr8oQA
+    category: Announcements   # 替换为您选择的分类Announcements或General
+    category_id: DIC_kwDOOr8oQM4CqSZ1
+
+# 博客设置
+permalink: /blog/:year/:month/:day/:title/
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Jekyll设置
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md

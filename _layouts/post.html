@@ -31,7 +31,7 @@ layout: default
     <div class="post-tags">
       <i class="fas fa-tags"></i>
       {% for tag in page.tags %}
-      <a href="/tags.html#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
+      <a href="{{ '/tags.html' | relative_url }}#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
       {% endfor %}
     </div>
     {% endif %}

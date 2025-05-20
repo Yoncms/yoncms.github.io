@@ -1,0 +1,53 @@
+/* 标签页面样式 */
+.tag-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tag-posts {
+  margin-top: 30px;
+}
+
+.post-card {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post-card h2 {
+  margin: 0 0 10px 0;
+}
+
+.post-card h2 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.post-card h2 a:hover {
+  color: #007bff;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.post-categories {
+  margin-left: 10px;
+}
+
+.category {
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.post-excerpt {
+  color: #666;
+  line-height: 1.6;
+} 

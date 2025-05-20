@@ -1,0 +1,32 @@
+- title: JavaScript
+  description: 项目简短描述，介绍这个项目的主要功能和特点。
+  image: /assets/images/project1.jpg
+  tags:
+    - JavaScript
+    - HTML
+    - CSS
+  demo_url: https://github.com/Yoncms/JavaScript
+  github_url: https://github.com/Yoncms/banjbl
+  featured: true
+
+- title: PHP
+  description: 项目简短描述，介绍这个项目的主要功能和特点。
+  image: /assets/images/project2.jpg
+  tags:
+    - PDO
+    - PHP
+    - MySQL
+  demo_url: https://github.com/Yoncms/PHP
+  github_url: https://github.com/Yoncms/myIndex
+  featured: true
+
+- title: Python
+  description: 项目简短描述，介绍这个项目的主要功能和特点。
+  image: /assets/images/project3.jpg
+  tags:
+    - Python
+    - Java
+    - VPN
+  demo_url: https://github.com/Yoncms/Python
+  github_url: https://github.com/Yoncms/VPN
+  featured: true

@@ -10,21 +10,46 @@ permalink: tags.html
   <div class="tag-cloud">
     {% assign tags_list = site.tags | sort %}
     {% for tag in tags_list %}
-      <div class="tag-section" id="{{ tag[0] | slugify }}">
-        <h2>{{ tag[0] }}</h2>
-        <ul>
-          {% assign posts = tag[1] | sort: 'date' | reverse %}
-          {% for post in posts %}
-            <li>
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+    <a href="#{{ tag[0] | slugify }}" class="tag-link">{{ tag[0] }}</a>
     {% endfor %}
   </div>
+
+  {% for tag in tags_list %}
+  <div id="{{ tag[0] | slugify }}" class="tag-section">
+    <h2>{{ tag[0] }}</h2>
+    <ul>
+      {% assign posts = tag[1] | sort: 'date' | reverse %}
+      {% for post in posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="post-date">{{ post.date | date: "%Y年%m月%d日" }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 获取URL中的hash
+  const hash = window.location.hash;
+  if (hash) {
+    // 移除#号
+    const tagId = hash.substring(1);
+    // 找到对应的标签部分
+    const tagSection = document.getElementById(tagId);
+    if (tagSection) {
+      // 隐藏其他标签部分
+      document.querySelectorAll('.tag-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      // 显示当前标签部分
+      tagSection.style.display = 'block';
+    }
+  }
+});
+</script>
 
 <style>
 .tags-page {

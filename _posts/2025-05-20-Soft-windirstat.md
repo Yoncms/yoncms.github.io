@@ -8,7 +8,7 @@ featured_image: /assets/images/article11.jpg
 ---
 # 磁盘使用情况统计和清理工具
 <pre>
-<a href='https://github.com/Yoncms/yoncms.github.io/releases/tag/WinDirStat-x64soft'>WinDirStat</a> 中文版<br>
+<a href='https://github.com/Yoncms/yoncms.github.io/releases/tag/WinDirStat-x64'>WinDirStat</a> 中文版<br>
 是用于各种版本的 Microsoft Windows 的磁盘使用情况统计查看器和清理工具。 
 
 

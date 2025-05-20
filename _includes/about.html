@@ -1,0 +1,15 @@
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">关于我</h2>
+        <div class="about-content">
+            {% if site.about %}
+                {% for paragraph in site.about %}
+                    <p>{{ paragraph }}</p>
+                {% endfor %}
+            {% else %}
+                <p>在这里介绍您自己，包括您的背景、兴趣和专业领域。这段文字应该能够让访问者快速了解您是谁，您做什么，以及您的价值观。</p>
+                <p>您可以分享您的职业经历、教育背景、个人成就或任何您认为重要的信息。这是展示您个性和专业能力的好地方。</p>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -10,9 +10,18 @@ permalink: /tags/
   <div class="tag-cloud">
     {% assign tags_list = site.tags | sort %}
     {% for tag in tags_list %}
-      <a href="/tags/{{ tag[0] | slugify }}/" class="tag-link">
-        {{ tag[0] }} ({{ tag[1] | size }})
-      </a>
+      <div class="tag-section">
+        <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+        <ul>
+          {% assign posts = tag[1] | sort: 'date' | reverse %}
+          {% for post in posts %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
   </div>
 </div>

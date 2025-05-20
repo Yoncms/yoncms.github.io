@@ -5,49 +5,45 @@
   padding: 20px;
 }
 
-.tag-posts {
-  margin-top: 30px;
+.tag-cloud {
+  margin: 20px 0;
 }
 
-.post-card {
-  margin-bottom: 30px;
-  padding: 20px;
+.tag-section {
+  margin: 30px 0;
+}
+
+.tag-section h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.tag-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tag-section li {
+  margin: 10px 0;
+  padding: 10px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.post-card h2 {
-  margin: 0 0 10px 0;
-}
-
-.post-card h2 a {
+.tag-section li a {
   color: #333;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.post-card h2 a:hover {
+.tag-section li a:hover {
   color: #007bff;
 }
 
-.post-meta {
+.post-date {
   color: #666;
   font-size: 0.9em;
-  margin-bottom: 10px;
-}
-
-.post-categories {
   margin-left: 10px;
-}
-
-.category {
-  background: #f0f0f0;
-  padding: 2px 8px;
-  border-radius: 3px;
-  margin-right: 5px;
-}
-
-.post-excerpt {
-  color: #666;
-  line-height: 1.6;
 } 

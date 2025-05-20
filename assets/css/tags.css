@@ -29,7 +29,7 @@
 }
 
 /* 标签页面样式 */
-.tag-page {
+.tags-page {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -37,11 +37,17 @@
 
 .tag-cloud {
   margin: 20px 0;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 5px;
 }
 
 .tag-section {
   margin: 30px 0;
-  padding-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .tag-section h2 {
@@ -58,23 +64,32 @@
 .tag-section li {
   margin: 10px 0;
   padding: 10px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #eee;
 }
 
-.tag-section li a {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
+.tag-section li:last-child {
+  border-bottom: none;
 }
 
-.tag-section li a:hover {
-  color: #007bff;
-}
-
-.post-date {
+.tag-section .post-date {
   color: #666;
   font-size: 0.9em;
   margin-left: 10px;
+}
+
+.tag-link {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag-link:hover {
+  background: #d0d0d0;
+  color: #007bff;
 } 

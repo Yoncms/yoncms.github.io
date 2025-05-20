@@ -1,0 +1,24 @@
+- name: 编程语言
+  items:
+    - name: JavaScript
+      level: 90
+    - name: Python
+      level: 85
+    - name: Java
+      level: 75
+- name: 前端技术
+  items:
+    - name: HTML/CSS
+      level: 95
+    - name: React
+      level: 80
+    - name: Vue
+      level: 70
+- name: 其他技能
+  items:
+    - name: Git
+      level: 85
+    - name: Docker
+      level: 75
+    - name: 数据库
+      level: 80

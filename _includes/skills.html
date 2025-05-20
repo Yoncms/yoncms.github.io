@@ -1,0 +1,20 @@
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">技能专长</h2>
+        <div class="skills-container">
+            {% for category in site.data.skills %}
+            <div class="skill-category">
+                <h3>{{ category.name }}</h3>
+                {% for skill in category.items %}
+                <div class="skill-item">
+                    <span>{{ skill.name }}</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: {{ skill.level }}%"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

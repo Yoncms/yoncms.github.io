@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<div class="about-container">
+  <header class="about-header">
+    <h1 class="page-title">关于我</h1>
+  </header>
+
+  <div class="about-content">
+    <div class="profile">
+      <div class="profile-image">
+        <img src="{{ '/assets/images/avatar.png' | relative_url }}" alt="{{ site.author.name }}">
+      </div>
+      <div class="profile-content">
+        <h2>{{ site.author.name }}</h2>
+        <p class="tagline">{{ site.author.bio }}</p>
+        <div class="social-links">
+          {% if site.social_links.github %}
+          <a href="{{ site.social_links.github }}" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          {% endif %}
+          
+          {% if site.social_links.twitter %}
+          <a href="{{ site.social_links.twitter }}" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          {% endif %}
+          
+          {% if site.social_links.linkedin %}
+          <a href="{{ site.social_links.linkedin }}" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          {% endif %}
+          
+          {% if site.social_links.email %}
+          <a href="{{ site.social_links.email }}" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <h3>个人简介</h3>
+      <p>在这里详细介绍您自己，包括您的背景、兴趣和专业领域。这段文字应该能够让访问者深入了解您是谁，您做什么，以及您的价值观。</p>
+      <p>您可以分享您的职业经历、教育背景、个人成就或任何您认为重要的信息。这是展示您个性和专业能力的好地方。</p>
+      
+      <h3>专业经历</h3>
+      <div class="experience-item">
+        <h4>职位名称</h4>
+        <p class="experience-meta">公司名称 | 2023年 - 至今</p>
+        <p>在这里描述您的工作职责和成就。尽量使用具体的例子和数据来展示您的贡献和影响。</p>
+      </div>
+      
+      <div class="experience-item">
+        <h4>职位名称</h4>
+        <p class="experience-meta">公司名称 | 2020年 - 2023年</p>
+        <p>在这里描述您的工作职责和成就。尽量使用具体的例子和数据来展示您的贡献和影响。</p>
+      </div>
+      
+      <h3>教育背景</h3>
+      <div class="education-item">
+        <h4>学位名称</h4>
+        <p class="education-meta">学校名称 | 2016年 - 2020年</p>
+        <p>在这里描述您的学习经历、研究方向或获得的荣誉。</p>
+      </div>
+      
+      <h3>兴趣爱好</h3>
+      <p>分享一些您的个人兴趣和爱好，这有助于展示您的全面性格，并可能与访问者建立共鸣。</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<div class="post-container">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <span><i class="fas fa-calendar"></i> {{ page.date | date: "%Y年%m月%d日" }}</span>
+        {% if page.categories %}
+        <span><i class="fas fa-folder"></i> {{ page.categories | first }}</span>
+        {% endif %}
+        {% if page.tags %}
+        <span><i class="fas fa-tags"></i> {{ page.tags | join: ", " }}</span>
+        {% endif %}
+      </div>
+      
+      {% if page.featured_image %}
+      <div class="post-featured-image">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.tags %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <span>{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="post-navigation">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="prev">
+        <i class="fas fa-arrow-left"></i> {{ page.previous.title }}
+      </a>
+      {% endif %}
+      
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="next">
+        {{ page.next.title }} <i class="fas fa-arrow-right"></i>
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="post-author">
+      <div class="author-image">
+        <img src="{{ '/assets/images/avatar.png' | relative_url }}" alt="{{ site.author.name }}">
+      </div>
+      <div class="author-bio">
+        <h3>{{ site.author.name }}</h3>
+        <p>{{ site.author.bio }}</p>
+      </div>
+    </div>
+
+    {% if site.comments.provider == 'giscus' %}
+    <div class="comments-section">
+      <h2>评论</h2>
+      <script src="https://giscus.app/client.js"
+        data-repo="{{ site.comments.giscus.repo }}"
+        data-repo-id="{{ site.comments.giscus.repo_id }}"
+        data-category="{{ site.comments.giscus.category }}"
+        data-category-id="{{ site.comments.giscus.category_id }}"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+    {% endif %}
+  </article>
+</div>

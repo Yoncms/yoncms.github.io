@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="projects-container">
+  <header class="projects-header">
+    <h1 class="page-title">项目展示</h1>
+    <p class="page-description">这里展示了我的一些个人项目和作品，涵盖了不同的技术领域。</p>
+  </header>
+
+  <div class="projects-grid">
+    {% for project in site.data.projects %}
+      {% include project-card.html %}
+    {% endfor %}
+  </div>
+</div>

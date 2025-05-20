@@ -1,0 +1,30 @@
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">联系我</h2>
+        <div class="contact-content">
+            <p>{{ site.contact.description }}</p>
+            <div class="contact-info">
+                {% if site.social_links.email %}
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>{{ site.social_links.email }}</span>
+                </div>
+                {% endif %}
+                
+                {% if site.social_links.github %}
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>{{ site.social_links.github_username }}</span>
+                </div>
+                {% endif %}
+                                
+                {% if site.social_links.twitter %}
+                <div class="contact-item">
+                    <i class="fab fa-twitter"></i>
+                    <span>{{ site.social_links.twitter_username }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -4,13 +4,13 @@ title: 标签
 permalink: tags.html
 ---
 
-<div class="tag-page">
+<div class="tags-page">
   <h1>标签</h1>
   
   <div class="tag-cloud">
     {% assign tags_list = site.tags | sort %}
     {% for tag in tags_list %}
-    <a href="#{{ tag[0] | slugify }}" class="tag-link">{{ tag[0] }}</a>
+    <a href="#{{ tag[0] | slugify }}" class="tag-link" data-tag="{{ tag[0] | slugify }}">{{ tag[0] }}</a>
     {% endfor %}
   </div>
 
@@ -32,21 +32,37 @@ permalink: tags.html
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 获取URL中的hash
+  // 获取所有标签链接
+  const tagLinks = document.querySelectorAll('.tag-link');
+  const tagSections = document.querySelectorAll('.tag-section');
+  
+  // 处理标签点击
+  function handleTagClick(tagId) {
+    tagSections.forEach(section => {
+      if (section.id === tagId) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  }
+
+  // 为每个标签链接添加点击事件
+  tagLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const tagId = this.getAttribute('data-tag');
+      handleTagClick(tagId);
+      // 更新URL hash
+      window.location.hash = tagId;
+    });
+  });
+
+  // 检查URL hash并处理
   const hash = window.location.hash;
   if (hash) {
-    // 移除#号
     const tagId = hash.substring(1);
-    // 找到对应的标签部分
-    const tagSection = document.getElementById(tagId);
-    if (tagSection) {
-      // 隐藏其他标签部分
-      document.querySelectorAll('.tag-section').forEach(section => {
-        section.style.display = 'none';
-      });
-      // 显示当前标签部分
-      tagSection.style.display = 'block';
-    }
+    handleTagClick(tagId);
   }
 });
 </script>
@@ -73,19 +89,27 @@ document.addEventListener('DOMContentLoaded', function() {
   border-radius: 3px;
   text-decoration: none;
   color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .tag-link:hover {
   background: #d0d0d0;
+  color: #007bff;
 }
 
 .tag-section {
   margin: 30px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .tag-section h2 {
   border-bottom: 2px solid #eee;
   padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .tag-section ul {
@@ -95,6 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .tag-section li {
   margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.tag-section li:last-child {
+  border-bottom: none;
 }
 
 .tag-section .post-date {

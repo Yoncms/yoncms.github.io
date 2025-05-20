@@ -3,10 +3,8 @@ module Jekyll
     safe true
 
     def generate(site)
-      if site.layouts.key? 'default'
-        site.tags.keys.each do |tag|
-          site.pages << TagPage.new(site, site.source, tag)
-        end
+      site.tags.keys.each do |tag|
+        site.pages << TagPage.new(site, site.source, tag)
       end
     end
   end
@@ -22,6 +20,7 @@ module Jekyll
       self.read_yaml(File.join(base, '_layouts'), 'default.html')
       self.data['tag'] = tag
       self.data['title'] = "标签: #{tag}"
+      self.data['layout'] = 'default'
     end
   end
 end 

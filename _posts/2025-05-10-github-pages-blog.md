@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用GitHub Pages搭建个人博客"
-date: 2025-05-10
+date: 2025-05-18
 categories: 教程
 tags: [GitHub Pages, 博客, 网站搭建]
 featured_image: /assets/images/article2.jpg
@@ -9,44 +9,44 @@ excerpt: "GitHub Pages是一个免费的静态网站托管服务，非常适合�
 ---
 
 # 使用GitHub Pages搭建个人博客
+<pre>
+GitHub Pages是GitHub提供的一项免费静态网站托管服务，它允许用户直接从GitHub仓库生成网站。<!--more--> 结合Jekyll静态网站生成器，GitHub Pages成为了开发者搭建个人博客的理想选择。
 
-GitHub Pages是GitHub提供的一项免费静态网站托管服务，它允许用户直接从GitHub仓库生成网站。结合Jekyll静态网站生成器，GitHub Pages成为了开发者搭建个人博客的理想选择。
+## 为什么选择GitHub Pages？  
 
-## 为什么选择GitHub Pages？
+1. **完全免费**：不需要支付任何托管费用  
+2. **易于使用**：直接从GitHub仓库部署  
+3. **版本控制**：网站内容受Git版本控制  
+4. **自定义域名**：支持绑定自己的域名  
+5. **HTTPS支持**：自动提供HTTPS加密  
 
-1. **完全免费**：不需要支付任何托管费用
-2. **易于使用**：直接从GitHub仓库部署
-3. **版本控制**：网站内容受Git版本控制
-4. **自定义域名**：支持绑定自己的域名
-5. **HTTPS支持**：自动提供HTTPS加密
+## 开始使用GitHub Pages  
 
-## 开始使用GitHub Pages
+### 第一步：创建GitHub仓库  
 
-### 第一步：创建GitHub仓库
+1. 登录您的GitHub账户  
+2. 创建一个新的仓库，命名为`username.github.io`（将username替换为您的GitHub用户名）  
+3. 这个特殊的仓库名称告诉GitHub这是一个GitHub Pages站点  
 
-1. 登录您的GitHub账户
-2. 创建一个新的仓库，命名为`username.github.io`（将username替换为您的GitHub用户名）
-3. 这个特殊的仓库名称告诉GitHub这是一个GitHub Pages站点
+### 第二步：选择Jekyll主题  
 
-### 第二步：选择Jekyll主题
+GitHub Pages原生支持Jekyll，您可以：  
 
-GitHub Pages原生支持Jekyll，您可以：
+1. 在仓库设置中选择一个内置主题  
+2. 使用现有的Jekyll主题  
+3. 创建自己的主题  
 
-1. 在仓库设置中选择一个内置主题
-2. 使用现有的Jekyll主题
-3. 创建自己的主题
+### 第三步：添加内容  
 
-### 第三步：添加内容
+在仓库中创建以下文件：  
 
-在仓库中创建以下文件：
+1. `_config.yml`：Jekyll配置文件  
+2. `index.md`或`index.html`：网站首页  
+3. `_posts/`目录：存放博客文章  
 
-1. `_config.yml`：Jekyll配置文件
-2. `index.md`或`index.html`：网站首页
-3. `_posts/`目录：存放博客文章
+### 第四步：编写博客文章  
 
-### 第四步：编写博客文章
-
-在`_posts`目录下创建Markdown文件，文件名格式为`YYYY-MM-DD-title.md`：
+在`_posts`目录下创建Markdown文件，文件名格式为`YYYY-MM-DD-title.md`：  
 
 ```markdown
 ---
@@ -129,3 +129,4 @@ git push origin main
 GitHub Pages结合Jekyll是搭建个人博客的强大组合，它不仅免费，而且易于使用和维护。通过本文的指导，您应该能够快速搭建自己的个人博客，开始分享您的知识和经验。
 
 祝您博客之旅愉快！
+</pre>

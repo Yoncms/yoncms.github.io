@@ -4,7 +4,7 @@ title: "Python把webp文件转成jpg并重新命名"
 date: 2025-05-19
 categories: 技术
 tags: [图片转换, 批量命名, 博客]
-featured_image: /assets/images/article001.jpg
+featured_image: /assets/images/article16.jpg
 ---
 # Python把webp文件转成jpg并重新命名
 

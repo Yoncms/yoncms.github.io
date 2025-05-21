@@ -3,7 +3,7 @@ layout: post
 title: "ffmpeg音视频转换提取"
 date: 2025-05-21
 categories: 技术
-tags: [Edge, WebView2, 博客]
+tags: [ffmpeg, 音频提取, 视频转换, 博客]
 featured_image: /assets/images/article20.jpg
 ---
 # ffmpeg音视频转换提取

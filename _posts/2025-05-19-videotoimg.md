@@ -6,12 +6,13 @@ categories: 技术
 tags: [ffmpeg, Python, 博客]
 featured_image: /assets/images/article10.jpg
 ---
-
+# 使用ffmpeg从视频里提取图片
 <pre>
 import os
 import ffmpeg
 
 def extract_first_frame(video_path, output_image_path):
+<!--more--> 
     """
     从视频中提取第一帧并保存为图像文件
     :param video_path: 输入视频文件路径

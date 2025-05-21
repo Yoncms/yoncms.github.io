@@ -9,7 +9,7 @@ featured_image: /assets/images/article14.jpg
 # 编程里的折中查找
 折中查找：前提是该数组是有序的。  
 查找时每次都折中找，如果要查找的值大于折中的元素，继续往右找，否则往左找
-
+<!--more--> 
 <pre>
 public int zzSearch(int[] arr, int key) {
         //数组先排序，折中查找的数组必须有顺序

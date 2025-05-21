@@ -7,14 +7,11 @@ tags: [manifest, Python, 博客]
 featured_image: /assets/images/article8.jpg
 ---
 # Chrome扩展v3的脚本注入
-
 <pre>
 (function(){
     // 获取body节点
     const bodyElement = document.querySelector('body');
-
-
-    
+<!--more-->   
     // 注入脚本到页面
     function injectScripts(scriptFiles) {
         if (!bodyElement) {

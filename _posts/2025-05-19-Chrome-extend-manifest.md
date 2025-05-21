@@ -12,9 +12,8 @@ featured_image: /assets/images/article7.jpg
     "author": "Yoncms/ZhangRongQuan",
     "name": "扩展的名字",
     "version": "25.05.10",
+<!--more-->
     "manifest_version": 3,
-
-
     "description": "扩展的简单说明",
     "icons": {
         "16": "pp.png",

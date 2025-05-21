@@ -7,11 +7,11 @@ tags: [JavaScript, 原型, 博客]
 featured_image: /assets/images/article18.jpg
 ---
 # 我所理解的JS原型  
-JS构造函数里有个属性prototype，而prototype属性是个对象，并且这个对象里又有个constructor的属性， 
+JS构造函数里有个属性prototype，而prototype属性是个对象，并且这个对象里又有个constructor的属性，
 <!--more--> 
-constructor的值就是这个构造函数。构造函数本身也有一个constructor属性，该属性与prototype里   
-并不一样，默认值也是函数本身，但是可以自定义，通过自定义就会发现它跟prototype里的不同。  
-构造函数new出来的对象里有个__proto__属性，而__proto__属性也是个对象，并且这个对象里又有个  
+constructor的值就是这个构造函数。构造函数本身也有一个constructor属性，该属性与prototype里
+并不一样，默认值也是函数本身，但是可以自定义，通过自定义就会发现它跟prototype里的不同。
+构造函数new出来的对象里有个__proto__属性，而__proto__属性也是个对象，并且这个对象里又有个
 constructor属性，属性值还是这个构造函数。
 <pre>
 var $ = function (args) {

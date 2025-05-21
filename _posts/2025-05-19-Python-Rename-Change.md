@@ -7,16 +7,11 @@ tags: [图片转换, 批量命名, 博客]
 featured_image: /assets/images/article16.jpg
 ---
 # Python把webp文件转成jpg并重新命名
-
 <pre>
 import os  
-
 from PIL import Image
-
 # 定义函数，把所有webp图片转换为png格式，并且删除原webp图片
-
-
-
+<!--more-->
 def convert_all_webp_to_png(folder_path):
     for filename in os.listdir(folder_path):
         if filename.lower().endswith(".webp"):

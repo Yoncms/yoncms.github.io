@@ -4,7 +4,7 @@ title: "前端开发中的响应式设计最佳实践"
 date: 2025-05-05
 categories: 技术
 tags: [前端开发, 响应式设计, CSS, 移动优先]
-featured_image: /assets/images/article3.jpg
+featured_image: /assets/images/article15.jpg
 excerpt: "响应式设计是现代前端开发的核心概念，本文将分享一些响应式设计的最佳实践和技巧。"
 ---
 

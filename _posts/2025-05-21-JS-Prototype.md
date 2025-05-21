@@ -4,7 +4,7 @@ title: "我所理解的JavaScript原型"
 date: 2025-05-21
 categories: 技术
 tags: [JavaScript, 原型, 博客]
-featured_image: /assets/images/article17.jpg
+featured_image: /assets/images/article18.jpg
 ---
 # 我所理解的JS原型  
 JS构造函数里有个属性prototype，而prototype属性是个对象，并且这个对象里又有个constructor的属性，  

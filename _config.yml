@@ -27,9 +27,9 @@ hero:
   button_text: 阅读我的文章
   button_link: "#articles"
 
-# 关于我设置
+# 关于我设置，这里如果有内容，则优先显示这里的内容，否则显示_includes/about.html的内容
 about:
-  
+
 
 # 联系方式设置
 contact:

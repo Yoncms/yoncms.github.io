@@ -7,3 +7,5 @@ tags: [下载, Chatgpt, 博客]
 featured_image: /assets/images/article19.jpg
 ---
 # Chatgpt下载
+
+<a href='https://github.com/Yoncms/yoncms.github.io/releases/tag/ChatGpt'>ChatGpt</a>

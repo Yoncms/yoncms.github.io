@@ -49,6 +49,10 @@ permalink: /blog/:year/:month/:day/:title/
 paginate: 10
 paginate_path: "/blog/page:num/"
 
+collections:
+  articles:
+    output: true
+
 # Jekyll设置
 markdown: kramdown
 plugins:

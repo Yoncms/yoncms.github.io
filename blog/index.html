@@ -12,6 +12,7 @@ pagination:
     <p class="page-description">这里是我分享的所有技术文章、教程和思考</p>
     
     <div class="posts-grid">
+      <!-- _posts目录下的文章 -->
       {% for post in paginator.posts %}
       <article class="article-card">
         <div class="article-image">
@@ -34,6 +35,7 @@ pagination:
         </div>
       </article>
       {% endfor %}
+      <!-- _articles目录下的文章 -->
       {% for post in paginator.articles %}
       <article class="article-card">
         <div class="article-image">

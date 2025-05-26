@@ -8,8 +8,8 @@ featured_image: /assets/images/article26.jpg
 ---
 # JavaScript获取嵌套在iframe里的video标签
 <pre>
-// 如果video是嵌套在iframe中的，可以使用以下方法获取video标签：
-// 获取iframe元素<!--more-->
+// 如果video是嵌套在iframe中的，可以使用以<!--more-->下方法获取video标签：
+// 获取iframe元素
 let iframe = document.querySelector('iframe');
 // 确保iframe和主页面在同一个域下
 if (iframe && iframe.contentDocument) {

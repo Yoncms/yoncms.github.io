@@ -30,12 +30,6 @@ class seetv:
         scheme = 'https://'
         self.host = host= f'{scheme}fj.rcpxpt.com/'
         self.url = f'{host}usersFront/userInfo'
-        self.url1 = f'{host}classPackage/findRequiredCourse/'
-        self.url2 = f'{host}commoditynew/findPcLectrueById'
-        self.url3 = f'{host}commoditynew/queryLecturesByChapterId'
-        self.url4 = f'{host}userHistory/addHistory'
-        self.url5 = f'{host}userHistory/setTime'
-        self.hosts = f'{host}tikuUserBatch/'
         self.session = requests.session()
 
     @staticmethod

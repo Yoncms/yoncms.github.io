@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "JavaScript获取嵌套在iframe里的video标签"
-date: 2025-05-23
+date: 2025-05-26
 categories: 技术
-tags: [正则, Python, 博客]
+tags: [JavaScript, iframe, 博客]
 featured_image: /assets/images/article26.jpg
 ---
 # JavaScript获取嵌套在iframe里的video标签

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "JavaScript克隆节点"
-date: 2025-05-23
+date: 2025-05-26
 categories: 技术
-tags: [正则, Python, 博客]
+tags: [JavaScript, clone, 博客]
 featured_image: /assets/images/article27.jpg
 ---
 # JavaScript克隆节点

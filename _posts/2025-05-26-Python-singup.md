@@ -17,7 +17,7 @@ from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_v1_5
 from fake_useragent import UserAgent
 
-# 登录时的密码加密使用到python的RSA加密
+# 登录时需要滑块验证，密码加密使用到python的RSA加密
 
 class seetv:
     bg = 'bg.png'

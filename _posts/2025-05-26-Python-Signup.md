@@ -4,7 +4,7 @@ title: "Python模拟滑块验并且证密码加密登录"
 date: 2025-05-26
 categories: 技术
 tags: [Python, RSA, 博客]
-featured_image: /assets/images/article27.jpg
+featured_image: /assets/images/article28.jpg
 ---
 # Python模拟滑块验并且证密码加密登录
 <pre>

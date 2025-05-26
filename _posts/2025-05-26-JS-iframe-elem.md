@@ -4,7 +4,7 @@ title: "JavaScript获取嵌套在iframe里的video标签"
 date: 2025-05-23
 categories: 技术
 tags: [正则, Python, 博客]
-featured_image: /assets/images/article25.jpg
+featured_image: /assets/images/article26.jpg
 ---
 # JavaScript获取嵌套在iframe里的video标签
 <pre>

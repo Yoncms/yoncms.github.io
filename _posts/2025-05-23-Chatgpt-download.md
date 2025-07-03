@@ -9,3 +9,5 @@ featured_image: /assets/images/article21.jpg
 # Chatgpt下载
 
 <a href='https://github.com/Yoncms/yoncms.github.io/releases/tag/ChatGpt'>ChatGpt</a>
+
+<a href="https://github.com/Yoncms/yoncms.github.io/releases">ChatGPT-WinDirStat</a>

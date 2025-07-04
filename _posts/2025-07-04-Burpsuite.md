@@ -9,7 +9,7 @@ featured_image: /assets/images/article37.jpg
 # 开启代理的Burpsuite抓包设置
 
 <pre>
-1. 在使用burpsuite抓包时，如果同时还开启了代理，就要在burpsuite的setting->user
+1. 在使用burpsuite抓包时，如果同时还开启了代理<!--more-->，就要在burpsuite的setting->user
 
 2. ->network->connections->SOCKS proxy->选中Use SOCKS proxy->host:127.0.0.1
 

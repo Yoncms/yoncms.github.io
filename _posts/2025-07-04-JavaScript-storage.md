@@ -1,3 +1,4 @@
+---
 layout: post
 title: "JavaScript的当前页监听localStorage"
 date: 2025-07-04

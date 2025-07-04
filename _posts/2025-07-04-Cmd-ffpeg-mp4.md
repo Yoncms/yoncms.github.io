@@ -9,7 +9,7 @@ featured_image: /assets/images/article32.jpg
 # ffmpeg生成适合网页快速播放的视频文件
 <pre>
 @echo off
-chcp 65001 >nul
+chcp 65001 >nul<!--more-->
 setlocal enabledelayedexpansion
 @echo off
 REM 设置工作目录（可选），否则默认当前目录

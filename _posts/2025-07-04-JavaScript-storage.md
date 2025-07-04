@@ -10,18 +10,18 @@ featured_image: /assets/images/article32.jpg
 # JavaScript的当前页监听localStorage值的变化
 
 <pre>
-自定义监听localStorage的方法，<!--more-->可以在本页面中监听storage的变化；
-通常在当前页修改localStorage的值，默认是监听不到localStorage</p>
+自定义监听localStorage的方法，&lt;!--more--&gt;可以在本页面中监听storage的变化；
+通常在当前页修改localStorage的值，默认是监听不到localStorage&lt;/p&gt;
 的变化，如果需要监听，就要对它进行触发。需要这么做，通常是因为
-页面会刷新，要是只是设置个全局变量的话，页面一刷新就会被初始化。</p>
+页面会刷新，要是只是设置个全局变量的话，页面一刷新就会被初始化。&lt;/p&gt;
 
 文件1.html
 
-<script>
-const $x = (args, single=0)=>{
+&lt;script&gt;
+const $x = (args, single=0)=&gt;{
     let tf = typeof args;
     if(tf == 'function') {
-        window.addEventListener('load', ()=>{
+        window.addEventListener('load', ()=&gt;{
             args();
         });
         return;
@@ -69,7 +69,7 @@ let timer = setInterval(function(){
     // 如果把这句代码注释掉，下面的代码是监听不到namex的变化的
     myLocal.setItem('names', 'zhangrongquansssss'+(i+32134));
 
-    if(i >= 5) return clearInterval(timer);
+    if(i &gt;= 5) return clearInterval(timer);
 
     i++;
 }, 1000);
@@ -90,31 +90,31 @@ window.addEventListener('myStorage', function(e){
     let ed = e.detail;
     // 因为names的值变化了，所以就被监听到了，因此键和值
     // 就可以直接获取到了，而不是通过getItem去获取。
-    console.log('> myLocal', ed.key);
-    console.log('>> myLocal', ed.value);
+    console.log('&gt; myLocal', ed.key);
+    console.log('&gt;&gt; myLocal', ed.value);
   
     // 如果上面的names值没有变化，这里是监听不到的,
     // 这里能获取到namex的值的变化，是因为names的值变了，
     // 而且这里也不是监听到namex的变化了，而是因为names值变了
     // 被监听到了，因此函数被执行了，而这句代码就在函数里，所以
     // 也被执行了，而它的执行结果是获取namex的值。
-    console.log('>>> localstorage', localStorage.getItem('namex'));
+    console.log('&gt;&gt;&gt; localstorage', localStorage.getItem('namex'));
 });
 
 文件2.html
 
-<div class='dc'>1111</div>
-<div class='dc'>2222</div>
-<div class='dc'>3333</div>
-<div class='dc'>4444</div>
-<div class='dc'>5555</div>
-<div class='dc'>6666</div>
-<div class='dc'>7777</div>
-<script>
-const $x = (args, single=0)=>{
+&lt;div class='dc'&gt;1111&lt;/div&gt;
+&lt;div class='dc'&gt;2222&lt;/div&gt;
+&lt;div class='dc'&gt;3333&lt;/div&gt;
+&lt;div class='dc'&gt;4444&lt;/div&gt;
+&lt;div class='dc'&gt;5555&lt;/div&gt;
+&lt;div class='dc'&gt;6666&lt;/div&gt;
+&lt;div class='dc'&gt;7777&lt;/div&gt;
+&lt;script&gt;
+const $x = (args, single=0)=&gt;{
     let tf = typeof args;
     if(tf == 'function') {
-        window.addEventListener('load', ()=>{
+        window.addEventListener('load', ()=&gt;{
             args();
         });
         return;
@@ -128,18 +128,18 @@ const $x = (args, single=0)=>{
 };
 
 let i = 1;
-var times = setInterval(()=>{
+var times = setInterval(()=&gt;{
     localStorage.setItem('namex', 'zhangrongquan'+i);
-    if(i >= 10) return clearInterval(times);
+    if(i &gt;= 10) return clearInterval(times);
     i++;
 }, 1000);
 
  window.addEventListener('storage', function(e){
      let {key, oldValue, newValue} = e;
      if(key=='names')return;
-     console.log('>>>>>', key, oldValue, newValue);
+     console.log('&gt;&gt;&gt;&gt;&gt;', key, oldValue, newValue);
      let em = $x('.dc');
      em[newValue % 7].style.fontSize = '30px';
  });
-</script>
+&lt;/script&gt;
 </pre>

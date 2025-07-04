@@ -12,7 +12,11 @@ featured_image: /assets/images/article38.jpg
 #### 系统自检、自动修复方法（只能修复一些小问题）
 sfc /scannow    #### 中间有个空格符
 
-通过cmd指定目录安装：<!--more-->xxxx.exe /DIR="盘符:\xxx\xxx
+#### 通过cmd指定目录安装：
+<!--more-->xxxx.exe /DIR="盘符:\xxx\xxx
+
+#### 使用命令提示符开启或关闭休眠： 
+开启：powercfg /h on  关闭：powercfg -h off 
 
 #### 设置默认程序的安装路径
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion。 

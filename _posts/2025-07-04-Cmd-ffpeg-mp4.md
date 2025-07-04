@@ -3,7 +3,7 @@ layout: post
 title: "ffmpeg生成适合网页快速播放的视频文件"
 date: 2025-07-04
 categories: 技术
-tags: [JavaScript, storage, 博客]
+tags: [ffmpeg, 视频处理, 博客]
 featured_image: /assets/images/article33.jpg
 ---
 # ffmpeg生成适合网页快速播放的视频文件

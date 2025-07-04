@@ -9,6 +9,9 @@ featured_image: /assets/images/article38.jpg
 # 家用电脑应用的一些设置
 
 <pre>
+#### 系统自检、自动修复方法（只能修复一些小问题）
+sfc /scannow    #### 中间有个空格符
+
 通过cmd指定目录安装：<!--more-->xxxx.exe /DIR="盘符:\xxx\xxx
 
 #### 设置默认程序的安装路径

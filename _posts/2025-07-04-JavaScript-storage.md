@@ -10,7 +10,7 @@ featured_image: /assets/images/article32.jpg
 # JavaScript的当前页监听localStorage值的变化
 
 <pre>
-自定义监听localStorage的方法，可以在本页面中监听storage的变化；<!--more-->
+自定义监听localStorage的方法，<!--more-->可以在本页面中监听storage的变化；
 通常在当前页修改localStorage的值，默认是监听不到localStorage</p>
 的变化，如果需要监听，就要对它进行触发。需要这么做，通常是因为
 页面会刷新，要是只是设置个全局变量的话，页面一刷新就会被初始化。</p>

@@ -4,7 +4,7 @@ title: "OpenCV直接操作返回的二进制图片数据"
 date: 2025-07-04
 categories: 技术
 tags: [JavaScript, Event, 博客]
-featured_image: /assets/images/article31.jpg
+featured_image: /assets/images/article34.jpg
 ---
 # OpenCV直接操作返回的二进制图片数据
 

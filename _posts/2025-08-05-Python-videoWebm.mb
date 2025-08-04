@@ -6,11 +6,11 @@ categories: 技术
 tags: [Python, 截取视频, 博客]
 featured_image: /assets/images/article43.jpg
 ---
-# Python从视频里截取多段不连续的视频合并成一个视频
+# Python从视频里截取多段不连续的视频合并成一个视频<!--more-->
 
 <pre>
 import os
-import subprocess <!--more-->
+import subprocess
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 input_dir = "../index"

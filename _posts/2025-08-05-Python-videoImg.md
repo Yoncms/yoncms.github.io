@@ -10,7 +10,7 @@ featured_image: /assets/images/article42.jpg
 
 <pre>
 import os
-import subprocess
+import subprocess<!--more-->
 import random
 # 采用多进程
 from concurrent.futures import ProcessPoolExecutor, as_completed

@@ -8,7 +8,7 @@ featured_image: /assets/images/article43.jpg
 ---
 # JavaScript把子节点的事件绑定到父节点
 <pre>
-<div id="out"<!--more-->style="background:#efe">
+<div id="out"style="background:#efe"><!--more-->
     <div id="div1"class='sdiv'data-ddd='myself'>1</div>
     <div id="div2"class='sdiv'data-ddd='youself'>2</div>
     <div id="div3"class='sdiv'data-ddd='xxself'>3</div>

@@ -10,7 +10,7 @@ featured_image: /assets/images/article45.jpg
 
 <pre>
 &lt;div id='dv'&gt;
-	&lt;div class='abc'&gt;1&lt;/div&gt;&lt;!--more--&gt;
+	&lt;div class='abc'&gt;1&lt;/div&gt;<!--more-->
 	&lt;div class='abd'&gt;2&lt;/div&gt;
 	&lt;div class='adc'&gt;3&lt;/div&gt;
 	&lt;div class='abe'&gt;4&lt;/div&gt;

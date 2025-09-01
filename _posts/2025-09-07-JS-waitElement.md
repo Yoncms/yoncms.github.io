@@ -4,7 +4,7 @@ title: "JS等待获取/查找元素"
 date: 2025-09-01
 categories: 技术
 tags: [JavaScript, DOM, 博客]
-featured_image: /assets/images/article44.jpg
+featured_image: /assets/images/article45.jpg
 ---
 # JavaScript等待获取/查找元素
 

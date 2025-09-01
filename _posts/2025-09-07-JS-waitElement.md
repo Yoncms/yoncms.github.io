@@ -9,15 +9,15 @@ featured_image: /assets/images/article45.jpg
 # JavaScript等待获取/查找元素
 
 <pre>
-<div id='dv'>
-	<div class='abc'>1</div><!--more-->
-	<div class='abd'>2</div>
-	<div class='adc'>3</div>
-	<div class='abe'>4</div>
-	<div class='aec'>5</div>
-	<div class='afc'>6</div>
-</div>
-<script>
+&lt;div id='dv'&gt;
+	&lt;div class='abc'&gt;1&lt;/div&gt;&lt;!--more--&gt;
+	&lt;div class='abd'&gt;2&lt;/div&gt;
+	&lt;div class='adc'&gt;3&lt;/div&gt;
+	&lt;div class='abe'&gt;4&lt;/div&gt;
+	&lt;div class='aec'&gt;5&lt;/div&gt;
+	&lt;div class='afc'&gt;6&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
 // 等待获取元素
 function $y(selector, fn, single=0) {
 
@@ -63,5 +63,5 @@ $y("#dv", function(el){
         console.log('className', em.className); 
     });
 });
-</script>
+&lt;/script&gt;
 </pre>

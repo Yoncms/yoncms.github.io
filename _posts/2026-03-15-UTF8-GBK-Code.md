@@ -7,7 +7,7 @@ tags: [utf-8, GBK, 博客]
 featured_image: /assets/images/article47.jpg
 ---
 # UTF8和GBK编码说明
-<p>Python/java/c/c++/js 使用 0b 或 0B 作为二进制数的前缀
+<p>Python/java/c/c++/js 使用 0b 或 0B 作为二进制数的前缀<!--more-->
 <p>Python/java/c/c++/js 使用 0x 或 0X 作为十六进制数的前缀
 <p>\u（反斜杠 + 小写字母 u）+ 4位 是Unicode 字符的十六进制转义表示法
 <p>\U（反斜杠 + 小写字母 u）+ 8位 是Unicode 字符的十六进制转义表示法

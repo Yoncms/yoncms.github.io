@@ -6,7 +6,7 @@ categories: 技术
 tags: [nuitka, python, 博客]
 featured_image: /assets/images/article48.jpg
 ---
-nuitka打包后的exe文件，双击打开后遇到错误迅速退出，想要查看什么错误，可以在cmd窗口手动打开exe文件，不要
+nuitka打包后的exe文件，双击打开后遇到错误迅速退出，想要查看什么错误，可以<!--more-->在cmd窗口手动打开exe文件，不要
 直接双击它就可以。
 
 python -m nuitka --standalone --onefile your_program.py --enable-plugin=tk-inter  --enable-plugin=tk-inter

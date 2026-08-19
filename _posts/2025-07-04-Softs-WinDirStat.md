@@ -11,5 +11,5 @@ featured_image: /assets/images/article29.jpg
 
 系统工具WinDirStat && ChatGPT for Windows<!--more-->
 
-<a href="https://github.com/Yoncms/yoncms.github.io/releases">ChatGPT-WinDirStat</a>
+## <a style="text-decoration:none" href="https://github.com/Yoncms/yoncms.github.io/releases">ChatGPT-WinDirStat</a>
 

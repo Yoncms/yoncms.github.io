@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "封装DDDDOCR库进行滑块验证或验证码识别"
+title: "封装DDDDOCR库"
 date: 2026-09-14
 categories: 技术
 tags: [ddddocr, 验证码, 博客]

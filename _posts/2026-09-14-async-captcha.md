@@ -6,8 +6,8 @@ categories: 技术
 tags: [ddddocr, 验证码, 博客]
 featured_image: /assets/images/article3.jpg
 ---
-# 封装DDDDOCR库进行滑块验证或验证码识别
-# 通用版<!--more-->
+# 封装DDDDOCR库进行滑块验证或验证码<!--more-->识别
+# 通用版
 # 用于图片验证，包括滑块验证和文本识别验证
 # 使用异步多并发
 # 使用curl_cffi库发送http请求

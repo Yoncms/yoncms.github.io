@@ -1,0 +1,273 @@
+---
+layout: post
+title: "asyncio+curl_cffi封装库"
+date: 2026-09-14
+categories: 技术
+tags: [封装, 异步请求, 博客]
+featured_image: /assets/images/article01.jpg
+---
+# ====================================================================
+# 经过整合优化的基础类，既有同步也有异步<!--more-->
+# 添加了check_is_image方法，目的是有的验证码是动态生成的页面，返回的头是text/html，
+# 但是内容是图片,通过判断其二进制前几个字节来判断是否是图片
+# ====================================================================
+<pre>
+import asyncio
+import re
+import json
+from typing import Optional, Union, Dict, Any
+
+from curl_cffi import AsyncSession, requests
+from curl_cffi.const import CurlOpt
+from curl_cffi.requests.errors import RequestsError, CurlError
+
+class common:
+    def __init__(self, proxy: Union[int, str] = 0):
+        self.scheme = 'https://'
+        self.host = ''
+        self.head = {}
+        self.cook = {}
+        self.resp = 0
+        # self.semaphore = asyncio.Semaphore(5)  # 限制并发数
+        self.space = re.compile(r'[\n \s]+')
+        self.session: Optional[Union[AsyncSession, requests.Session]] = None
+        self.url404 = ""
+        self.proxy = proxy
+        self.opt = {}
+        self.sethead()
+
+    def sethead(self):
+        self.head = {
+            'accept': 'text/html,application/xhtml+xml,application/xml,application/json,application/signed-exchange,image/*',
+            'accept-language': 'zh-CN,zh;q=0.9',
+            'connection': 'keep-alive',
+            'content-type':'application/json',
+            # 告诉服务器支持gzip解压
+            'accept-encoding': 'gzip, deflate, br', 
+            # 在 requests 中，当发送 POST 但没有提供 data 或 json 参数时会自动处理。
+            # 显式声明 Content-Type 避免触发服务器异常校验
+            # 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',  # 表示提交表单，类似于ajax的post请求
+            # 区分 AJAX 异步请求
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+        self.opt = {  # 关闭ssl校验
+            CurlOpt.SSL_VERIFYPEER: 0,
+            CurlOpt.SSL_VERIFYHOST: 0
+        }
+        if self.proxy != 0:
+            self.opt[CurlOpt.PROXY] = "http://127.0.0.1:8080"
+    
+    def keyExists(self, dic, key):
+        for k in key:
+            if k in dic:
+                return True
+        return False
+
+    # 动态更新会话header/cookie
+    def upCH(self, **kw):
+        if self.keyExitsts(kw, ('host', 'referer', 'authorization')):
+            if self.session is None:
+                self.head.update(kw)
+            else:
+                self.session.headers.update(kw)
+            return
+
+        # 更新cookie
+        if self.session is None:
+            self.cook.update(kw)
+        else:
+            self.session.cookies.update(kw)
+
+    def getcooks(self, ckey: Any, response=None):
+        # print(response.headers, dict(response.cookies))
+        """【整合到common】统一从会话或响应对象中提取 Cookie"""
+        if ckey == 0:
+            return None
+
+        cookies = response.cookies.get(ckey) or response.cookies
+        return cookies
+
+    # 判断返回的内容是否为图片
+    def check_is_image(self, raw_bytes):
+        IMAGE_MAGIC = {
+            b'\xff\xd8\xff': 'jpeg',
+            b'\x89PNG\r\n\x1a\n': 'png',
+            b'GIF8': 'gif',
+            b'BM': 'bmp',
+        }
+        for magic, fmt in IMAGE_MAGIC.items():
+            if raw_bytes.startswith(magic):
+                return fmt
+        return None
+
+    def redirect(self, response, ckey=0):
+        if not response.ok:
+            print("🔴 Err:", self.url404, response.status_code)
+            return None
+        # print(self.url404, response.status_code)
+        if response.status_code in {301, 302, 303, 307, 308}:
+            data = response.headers if ckey else response.headers.get("Location")
+            return data
+
+    def process_response(self, response, ckey=0):
+        # print(self.url404, response.status_code)
+        # print(f"[DEBUG] response.status_code: {getattr(response, 'status_code', 'N/A')}")
+        # print(f"[DEBUG] response.headers: {getattr(response, 'headers', 'N/A')}")
+        # print(f"[DEBUG] response.content length: {len(getattr(response, 'content', b''))}")
+        if (ress:=response.status_code) >=400:
+            # print(f'🔴 状态码异常: {ress}, 原始文本: {response.text[:200]}')
+            return
+        if resp:=self.redirect(response, ckey): return resp
+            
+        cookie = self.getcooks(ckey, response) if ckey else None
+        content_type = response.headers.get("Content-Type", "").lower()
+        try:
+            if "json" in content_type:
+                try:
+                    data = response.json()
+                except:
+                    data = json.loads(re.search(r'\((.*)\)', response.text).group(1))
+            elif "text" in content_type:
+                raw = response.content
+                if self.check_is_image(raw):
+                    data = raw
+                else:
+                    data = self.space.sub("", response.text)
+
+            else:
+                data = response if self.resp else response.content
+
+            return (data, cookie) if cookie is not None else data
+
+        except Exception as e:
+            print("🔴 process_responseErr >", e, self.url404)
+            return None
+
+
+# ====================================================================
+# 多并发
+# curl_cffi Async 实现的http请求类
+# 支持get和post请求、请求头、参数、代理
+# ====================================================================
+class ascurl(common):
+    semaphore = asyncio.Semaphore(15)  # 根据需求调整
+    def __init__(self, proxy: Union[int, str] = 0):
+        super().__init__(proxy)
+
+    async def __aenter__(self):
+        # 初始化curl异步会话
+        self.session = AsyncSession(
+            impersonate="chrome131",
+            max_clients=5,
+            timeout=30,
+            headers=self.head,  # 与自动指纹header合并
+            cookies=self.cook,
+            curl_options=self.opt
+        )
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        if self.session is not None:
+            await self.session.close()
+            await asyncio.sleep(0.1)
+
+    async def query(self, url: str, ckey: Any = 0, **kw):
+        """对外统一请求接口，完全兼容旧调用方式"""
+        if not self.session:
+            raise RuntimeError("请使用 async with ascurl() 上下文管理器")
+        async with self.semaphore:
+            retry_count = 0
+
+            while retry_count < 3:
+                try:
+                    if kw.get('put')==1:
+                        mtd = 'put'
+                        del kw['put']
+                    else:
+                        mtd = None
+                    req = self._build_request(url, **kw)
+                    # async with self.semaphore:
+
+                    response = await self._fetch(req, mtdx=mtd)
+                    # 调用父类 common 提取整合的解析逻辑
+                    return self.process_response(response, ckey)
+                except (OSError, asyncio.TimeoutError, ConnectionResetError, RequestsError, CurlError) as e:
+                    err_msg = str(e).lower()
+                    if "timeout" in err_msg or "timed out" in err_msg or "超时" in err_msg:
+                        retry_count += 1
+                        print(f"🔴 queryErr: 超时，第{retry_count}次重试...")
+                        await asyncio.sleep(1)
+                    else:
+                        raise
+        raise Exception("🔴 重试3次后仍超时")
+
+    def _build_request(self, url: str, **kw):
+        """构建请求参数（纯同步）"""
+        kw_copy = kw.copy()
+        if not url.startswith('http'):
+            url = f"{self.scheme}{self.host}/{url}"
+        self.url404 = url
+        # if 'study_details' in url: print(f"🔍 url404: {self.url404}")
+        datajson = kw_copy.get('data') is not None or kw_copy.get('json') is not None
+        if kw_copy.get('data') == 1:
+            del kw_copy['data']
+            
+        method = 'POST' if datajson else 'GET'
+
+        return {
+            'method': method,
+            'url': url,
+            'kwargs': kw_copy
+        }
+
+    async def _fetch(self, req: Dict[str, Any], mtdx):
+        # print(req['url'])
+        """curl_cffi 发送请求，适配参数、超时"""
+        method = req['method'].lower() if not mtdx else mtdx
+        # if 'resource_learning_positions' in req['url']: print(method)
+        method_func = getattr(self.session, method)
+        resp = await method_func(
+            req['url'],
+            timeout=30,
+            **req['kwargs'],
+            allow_redirects=False
+        )
+        return resp
+
+# ====================================================================
+# curl_cffi 同步实现的http请求类（单线程/同步执行）
+# ====================================================================
+class Curl(common):
+    def __init__(self, proxy: Union[int, str] = 0):  
+        super().__init__(proxy)           
+        self.session = requests.Session(
+            impersonate="chrome131", 
+            headers=self.head, 
+            timeout=30,
+            curl_options=self.opt  
+        )
+
+    def query(self, url: str, ckey: Any = 0, **kw):
+        session = self.session
+        kw_copy = kw.copy()
+        
+        has_data = kw_copy.get("data") is not None or kw_copy.get("json") is not None
+        method = session.post if has_data else session.get
+
+        if kw_copy.get('data') == 1:
+            del kw_copy['data']
+
+        url = url if url.startswith('http') else f"{self.scheme}{self.host}/{url}"
+        self.url404 = url
+
+        requests_keys = {'url': url}
+        if kw_copy:
+            requests_keys.update(kw_copy)
+
+        response = method(**requests_keys)
+        # 直接调用父类 common 整合后的响应解析方法
+        return self.process_response(response, ckey)
+
+
+# print('>', '开始加载相关工具...')
+</pre>

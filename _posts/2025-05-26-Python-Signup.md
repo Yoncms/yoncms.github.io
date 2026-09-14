@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python模拟滑块验并且证密码加密登录"
+title: "Python模拟滑块验并且进行密码加密登录"
 date: 2025-05-26
 categories: 技术
 tags: [Python, RSA, 博客]
